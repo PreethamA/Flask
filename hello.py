@@ -39,14 +39,15 @@ def index():
         return render_template('index.html',
             form = form, name = session.get('name'))
 '''
-from flask import Flask, request, make_response, abort
+from flask import Flask, request, make_response, abort, render_template
 from flask_script import Manager
 app = Flask(__name__)
 manager = Manager(app)
 
 @app.route('/')
 def index():
-    return '<h1>Hello World!</h1>'
+    return '<h1>Hello world </h1>'
+   # return render_template("index.html")
     #user_agent = request.headers.get('User-Agent')
     #return '<p>Your browser is %s</p>' % user_agent
     #response = make_response('<h1>This document carries a cookie!</h1>')
