@@ -1,15 +1,13 @@
-{% block head %}
-{{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
-    type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
-    type="image/x-icon">
-{% endblock %}
+</html>
 
-{%block scripts %}
-{{super() }}
-{{moment.include_moment() }}
-{%endblock %}
+ </head>
+    <body>
+       <!-- Remember to add more information here  <div>Flask: <a href="/index">Home</a></div>-->
+
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
     
     
     

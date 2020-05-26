@@ -1,3 +1,39 @@
+from flask import Flask, render_template, session, redirect, url_for
+
+#from flask.ext.wtf import Form
+#from wtforms import StringField, SubmitField
+#from wtforms.validators import Required
+
+hello = Flask(__name__)
+
+
+
+
+
+@hello.route('/')
+@hello.route('/text')
+def index():
+    user = {'username': 'KK'}
+    posts = [
+        {
+            'author': {'username': 'Lehman'},
+            'body': 'Dow is low today'
+        },
+        {
+            'author': {'username': 'Mark'},
+            'body': 'Hope Iran sells the oil at low price compared to last year'
+        }
+    ]
+    return render_template('text.html', title='Home', user=user, posts=posts)
+
+if __name__ == '__main__':
+    hello.run(debug=True)
+
+
+
+
+
+
 '''
 from flask import Flask, render_template, session, redirect, url_for
 
@@ -38,11 +74,41 @@ def index():
             return redirect(url_for('index'))
         return render_template('index.html',
             form = form, name = session.get('name'))
-'''
+
 from flask import Flask, request, make_response, abort, render_template
 from flask_script import Manager
 app = Flask(__name__)
 manager = Manager(app)
+
+
+
+@app.route('/')
+@app.route('/text')
+def index():
+    user = {'username': 'KK'}
+    posts = [
+        {
+            'author': {'username': 'Lehman'},
+            'body': 'Dow is low today'
+        },
+        {
+            'author': {'username': 'Mark'},
+            'body': 'Hope Iran sells the oil at low price compared to last year'
+        }
+    ]
+    return render_template('text.html', title='Home', user=user, posts=posts)
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/')
 def index():
@@ -66,4 +132,6 @@ def sow(name):
     return '<h1>Hello, %s!</h1>' % name
 if __name__ == '__main__':
     #app.run(debug=True)
-    manager.run()            
+    manager.run()
+
+'''
