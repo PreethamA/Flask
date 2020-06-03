@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 
 
 app = Flask(__name__)
@@ -7,9 +7,9 @@ app = Flask(__name__)
 def index():
     return "working in progress to serve NLP Machine learning models"
 
-@app.route('/text')
+@app.route('/text', methods=['GET', 'POST'])
 def text():
-    return "create the webform "
+    return render_template('form.html',form=form)
 
 
 
