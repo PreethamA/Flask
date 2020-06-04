@@ -9,6 +9,10 @@ def index():
 
 @app.route('/text', methods=['GET', 'POST'])
 def text():
+    if request.method == 'POST':
+        do_the_login()
+    else:
+        show_the_login_form()
     return render_template('form.html',form=form)
 
 
