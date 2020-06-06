@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 
 
 app = Flask(__name__)
@@ -18,9 +18,9 @@ def text():
 '''
 @app.route('/text')
 def text():
-    user_agent=request.headers.get("user-agent")
-    return "<p>Your browser is %s </p>" % user_agent
-
+    #user_agent=request.headers.get("user-agent")
+    #return "<p>Your browser is %s </p>" % user_agent
+    return redirect('http://www.facebook.com')
 if __name__ == '__main__':
     app.run(debug=True)
 
